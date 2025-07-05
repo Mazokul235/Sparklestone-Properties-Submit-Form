@@ -1161,14 +1161,12 @@
             <h2 class="section-title">Get Your Fair Cash Offer</h2>
             
             <div class="form-container">
-                <form id="property-form" action="https://formsubmit.co/sparklestoneproperties@gmail.com" method="POST">
-                    <!-- FormSubmit Configuration -->
+                <form id="property-form" action="https://formspree.io/f/meokwgqd" method="POST">
+                    <!-- Formspree Configuration -->
                     <input type="hidden" name="_subject" value="New Property Submission - SparkleStone Properties">
-                    <input type="hidden" name="_template" value="table">
                     <input type="hidden" name="_next" value="#thank-you">
-                    <input type="hidden" name="_autoresponse" value="Thank you for contacting SparkleStone Properties! We've received your property details and will review your submission within 24 hours. If you need immediate assistance, please call us at 850-325-0784.">
-                    <input type="hidden" name="_cc" value="sparklestoneproperties@gmail.com">
                     <input type="hidden" name="_replyto" value="sparklestoneproperties@gmail.com">
+                    <input type="hidden" name="_cc" value="sparklestoneproperties@gmail.com">
                     
                     <!-- Form Fields -->
                     <div class="form-group">
@@ -1253,12 +1251,10 @@
             <h2 class="section-title">Contact Our Team</h2>
             
             <div class="form-container">
-                <form id="contact-form" action="https://formsubmit.co/sparklestoneproperties@gmail.com" method="POST">
-                    <!-- FormSubmit Configuration -->
+                <form id="contact-form" action="https://formspree.io/f/meokwgqd" method="POST">
+                    <!-- Formspree Configuration -->
                     <input type="hidden" name="_subject" value="New Contact Message - SparkleStone Properties">
-                    <input type="hidden" name="_template" value="table">
                     <input type="hidden" name="_next" value="#contact-thank-you">
-                    <input type="hidden" name="_autoresponse" value="Thank you for contacting SparkleStone Properties! We've received your message and will respond within 24 hours. For immediate assistance, please call us at 850-325-0784.">
                     <input type="hidden" name="_replyto" value="sparklestoneproperties@gmail.com">
                     
                     <!-- Form Fields -->
@@ -1401,7 +1397,7 @@
                 successMessage.style.display = 'none';
                 errorMessage.style.display = 'none';
                 
-                // Submit to FormSubmit
+                // Submit to Formspree
                 fetch(form.action, {
                     method: 'POST',
                     body: new FormData(form),
