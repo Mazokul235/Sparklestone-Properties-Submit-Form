@@ -3,36 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SparkleStone Properties | Nationwide Property Buyers</title>
+    <title>SparkleStone Properties | Nationwide Cash Home Buyers</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --primary: #2C5F8B;
-            --secondary: #E4B363;
-            --accent: #5B8CBC;
-            --light: #F5F6F7;
-            --dark: #2D2D2D;
-            --gray: #E0E0E0;
+            --primary: #1A3E72;
+            --secondary: #FFA630;
+            --accent: #4A90E2;
+            --light: #F8FAFC;
+            --dark: #2D3748;
+            --gray: #E2E8F0;
+            --dark-blue: #0F2A4F;
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
         
         body {
             font-family: 'Open Sans', sans-serif;
             background-color: var(--light);
             color: var(--dark);
-            line-height: 1.6;
+            line-height: 1.7;
+            overflow-x: hidden;
         }
         
         h1, h2, h3, h4 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 600;
+            color: var(--dark-blue);
         }
         
         .container {
@@ -44,19 +47,20 @@
         
         /* Header & Navigation */
         header {
-            background-color: var(--light);
-            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            background-color: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
+            padding: 10px 0;
         }
         
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
+            padding: 5px 0;
         }
         
         .logo {
@@ -65,31 +69,35 @@
         }
         
         .logo-img {
-            width: 50px;
-            height: 50px;
-            background-color: var(--primary);
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
             display: flex;
             justify-content: center;
             align-items: center;
-            border-radius: 5px;
-            margin-right: 10px;
+            border-radius: 8px;
+            margin-right: 12px;
+            box-shadow: 0 4px 12px rgba(26, 62, 114, 0.2);
         }
         
         .logo-text {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+            letter-spacing: -0.5px;
         }
         
         .logo-text span:first-child {
             color: white;
-            background-color: var(--primary);
-            padding: 2px 5px;
-            border-radius: 3px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-right: 2px;
         }
         
         .logo-text span:last-child {
             color: var(--primary);
+            font-weight: 600;
         }
         
         .nav-links {
@@ -107,17 +115,19 @@
             font-weight: 600;
             position: relative;
             font-size: 0.95rem;
+            padding: 8px 0;
         }
         
         .nav-links a:after {
             content: '';
             position: absolute;
             width: 0;
-            height: 2px;
-            bottom: -5px;
+            height: 3px;
+            bottom: 0;
             left: 0;
-            background-color: var(--primary);
+            background: linear-gradient(90deg, var(--primary), var(--accent));
             transition: width 0.3s ease;
+            border-radius: 2px;
         }
         
         .nav-links a:hover:after {
@@ -129,36 +139,46 @@
             cursor: pointer;
             font-size: 1.5rem;
             color: var(--primary);
+            z-index: 1001;
         }
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
-            height: 85vh;
+            background: linear-gradient(rgba(15, 42, 79, 0.85), rgba(15, 42, 79, 0.9)), 
+                        url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            height: 90vh;
             display: flex;
             align-items: center;
             text-align: center;
             color: white;
-            margin-top: 80px;
+            margin-top: 70px;
+            position: relative;
         }
         
         .hero-content {
             width: 100%;
             max-width: 800px;
             margin: 0 auto;
+            padding: 0 20px;
+            animation: fadeInUp 1s ease;
         }
         
         .hero h1 {
-            font-size: 2.8rem;
+            font-size: 3rem;
             margin-bottom: 20px;
-            animation: fadeIn 1s ease;
             line-height: 1.2;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            color: white;
         }
         
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             margin-bottom: 30px;
             opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            color: white;
         }
         
         .hero-buttons {
@@ -169,8 +189,8 @@
         }
         
         .btn {
-            padding: 14px 32px;
-            border-radius: 5px;
+            padding: 16px 36px;
+            border-radius: 8px;
             font-weight: 600;
             text-decoration: none;
             display: inline-block;
@@ -178,51 +198,53 @@
             font-size: 1rem;
             border: none;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            letter-spacing: 0.5px;
         }
         
         .btn-primary {
-            background-color: var(--primary);
+            background: linear-gradient(135deg, var(--primary), var(--accent));
             color: white;
         }
         
         .btn-primary:hover {
-            background-color: #234a6d;
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 25px rgba(26, 62, 114, 0.3);
         }
         
         .btn-secondary {
-            background-color: var(--secondary);
-            color: var(--dark);
+            background-color: white;
+            color: var(--primary);
         }
         
         .btn-secondary:hover {
-            background-color: #d6a556;
+            background-color: var(--light);
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         }
         
         /* Benefits Section */
         .benefits {
-            padding: 90px 0;
+            padding: 100px 0;
             background-color: white;
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
-            color: var(--primary);
-            font-size: 2rem;
+            margin-bottom: 60px;
+            color: var(--dark-blue);
+            font-size: 2.2rem;
             position: relative;
         }
         
         .section-title:after {
             content: '';
             display: block;
-            width: 60px;
-            height: 3px;
-            background-color: var(--secondary);
-            margin: 15px auto 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            margin: 20px auto 0;
+            border-radius: 2px;
         }
         
         .benefits-grid {
@@ -234,30 +256,40 @@
         .benefit-card {
             text-align: center;
             padding: 40px 30px;
-            border-radius: 5px;
+            border-radius: 12px;
             background-color: white;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             border: 1px solid var(--gray);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
         }
         
         .benefit-icon {
-            font-size: 2.5rem;
-            color: var(--primary);
+            font-size: 2.8rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
             margin-bottom: 20px;
         }
         
         .benefit-card h3 {
             margin-bottom: 15px;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
         }
         
         .benefit-card p {
             color: #666;
+            font-size: 1rem;
         }
         
         /* Situations Section */
         .situations {
-            padding: 90px 0;
+            padding: 100px 0;
             background-color: var(--light);
         }
         
@@ -273,45 +305,71 @@
             align-items: flex-start;
             margin-bottom: 20px;
             background-color: white;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+            transition: transform 0.3s ease;
+        }
+        
+        .situation-item:hover {
+            transform: translateY(-5px);
         }
         
         .situation-bullet {
             color: var(--primary);
-            margin-right: 15px;
-            font-size: 1.4rem;
-            min-width: 30px;
+            margin-right: 20px;
+            font-size: 1.6rem;
+            min-width: 40px;
         }
         
         .situation-item h4 {
-            font-size: 1.1rem;
-            margin-bottom: 5px;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
             color: var(--primary);
         }
         
         .situation-item p {
             color: #666;
-            font-size: 0.95rem;
+            font-size: 1rem;
         }
         
         /* CTA Banner */
         .cta-banner {
-            background-color: var(--primary);
+            background: linear-gradient(135deg, var(--primary), var(--accent));
             color: white;
-            padding: 40px 0;
+            padding: 60px 0;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-banner:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            transform: rotate(30deg);
+            z-index: 1;
         }
         
         .cta-banner h2 {
             margin-bottom: 25px;
-            font-size: 1.8rem;
+            font-size: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-banner .btn {
+            position: relative;
+            z-index: 2;
         }
         
         /* About Page */
         .about-section {
-            padding: 100px 0;
+            padding: 120px 0;
             background-color: white;
         }
         
@@ -323,7 +381,9 @@
         
         .about-content p {
             margin-bottom: 25px;
-            line-height: 1.7;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: #555;
         }
         
         .process-steps {
@@ -339,85 +399,106 @@
         }
         
         .step-number {
-            width: 60px;
-            height: 60px;
-            background-color: var(--primary);
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
             color: white;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: bold;
             margin: 0 auto 20px;
+            box-shadow: 0 5px 20px rgba(26, 62, 114, 0.2);
         }
         
         .step h3 {
             margin-bottom: 10px;
             color: var(--primary);
+            font-size: 1.3rem;
         }
         
         .personal-touch {
-            background-color: var(--secondary);
-            padding: 40px;
-            border-radius: 5px;
-            margin-top: 60px;
+            background: linear-gradient(135deg, var(--secondary), #FFC05C);
+            padding: 50px;
+            border-radius: 12px;
+            margin-top: 80px;
             text-align: center;
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
+            box-shadow: 0 10px 30px rgba(255, 166, 48, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .personal-touch:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"><path d="M0 0 L100 100 M100 0 L0 100"/></svg>');
+            opacity: 0.2;
         }
         
         .personal-touch p {
             font-style: italic;
-            color: var(--dark);
+            color: var(--dark-blue);
             font-weight: 500;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            position: relative;
         }
         
         /* Properties Page */
         .properties-section {
-            padding: 90px 0;
+            padding: 100px 0;
             background-color: var(--light);
         }
         
         .properties-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 30px;
             margin: 50px 0;
         }
         
         .property-card {
             background-color: white;
-            border-radius: 5px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
         .property-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
         }
         
         .property-img {
-            height: 220px;
+            height: 240px;
             background-size: cover;
             background-position: center;
         }
         
         .property-content {
-            padding: 25px;
+            padding: 30px;
         }
         
         .property-content h3 {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             color: var(--primary);
+            font-size: 1.4rem;
         }
         
         .property-content p {
             color: #666;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            line-height: 1.7;
         }
         
         /* Forms */
@@ -425,106 +506,138 @@
             max-width: 800px;
             margin: 0 auto;
             background-color: white;
-            padding: 50px;
-            border-radius: 5px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            padding: 60px;
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
         }
         
         .form-group {
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
         
         .form-group label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             font-weight: 600;
-            color: var(--dark);
+            color: var(--dark-blue);
+            font-size: 1rem;
         }
         
         .form-control {
             width: 100%;
-            padding: 14px;
-            border: 1px solid var(--gray);
-            border-radius: 5px;
+            padding: 16px;
+            border: 2px solid var(--gray);
+            border-radius: 8px;
             font-family: 'Open Sans', sans-serif;
             font-size: 1rem;
+            transition: all 0.3s ease;
         }
         
         .form-control:focus {
             outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(44, 95, 139, 0.1);
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px rgba(74, 144, 226, 0.1);
         }
         
         textarea.form-control {
-            min-height: 150px;
+            min-height: 160px;
             resize: vertical;
         }
         
         .submit-btn {
-            background-color: var(--primary);
+            background: linear-gradient(135deg, var(--primary), var(--accent));
             color: white;
             border: none;
-            padding: 15px 30px;
-            border-radius: 5px;
+            padding: 18px 30px;
+            border-radius: 8px;
             font-weight: 600;
             cursor: pointer;
             width: 100%;
-            font-size: 1rem;
-            transition: background-color 0.3s ease;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(26, 62, 114, 0.3);
         }
         
         .submit-btn:hover {
-            background-color: #234a6d;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(26, 62, 114, 0.4);
         }
         
         /* Success Message */
         .form-success {
             display: none;
-            background-color: #4CAF50;
+            background: linear-gradient(135deg, #4CAF50, #66BB6A);
             color: white;
             text-align: center;
-            padding: 20px;
-            border-radius: 5px;
-            margin-top: 20px;
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 30px;
+            animation: fadeIn 0.5s ease;
+            box-shadow: 0 10px 30px rgba(76, 175, 80, 0.2);
+        }
+        
+        /* Error Message */
+        .form-error {
+            display: none;
+            background: linear-gradient(135deg, #f44336, #ef5350);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 30px;
             animation: fadeIn 0.5s ease;
         }
         
         /* Contact Info */
         .contact-info {
-            background-color: var(--primary);
+            background: linear-gradient(135deg, var(--primary), var(--accent));
             color: white;
-            padding: 40px;
-            border-radius: 5px;
+            padding: 50px;
+            border-radius: 12px;
             text-align: center;
-            margin: 50px 0;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin: 60px 0;
+            box-shadow: 0 15px 40px rgba(26, 62, 114, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-info:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2"><circle cx="50" cy="50" r="40"/></svg>');
         }
         
         .contact-info h3 {
-            margin-bottom: 25px;
-            font-size: 1.5rem;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+            position: relative;
         }
         
         .contact-info p {
-            font-size: 1.2rem;
-            margin-bottom: 15px;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 15px;
+            position: relative;
         }
         
         /* Map Placeholder */
         .map-placeholder {
-            height: 350px;
+            height: 400px;
             background-color: var(--gray);
             display: flex;
             justify-content: center;
             align-items: center;
-            border-radius: 5px;
-            margin: 50px 0;
+            border-radius: 12px;
+            margin: 60px 0;
             position: relative;
+            overflow: hidden;
         }
         
         .map-placeholder:before {
@@ -534,7 +647,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(44, 95, 139, 0.7);
+            background: linear-gradient(135deg, rgba(26, 62, 114, 0.8), rgba(74, 144, 226, 0.8));
             display: flex;
             justify-content: center;
             align-items: center;
@@ -545,76 +658,127 @@
             position: relative;
             z-index: 1;
             color: white;
-            font-size: 1.8rem;
+            font-size: 2rem;
             text-align: center;
             padding: 0 20px;
         }
         
         /* Footer */
         footer {
-            background-color: var(--dark);
+            background-color: var(--dark-blue);
             color: white;
-            padding: 60px 0 30px;
+            padding: 80px 0 40px;
+            position: relative;
+        }
+        
+        footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
         }
         
         .footer-content {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            margin-bottom: 40px;
+            align-items: flex-start;
+            margin-bottom: 60px;
         }
         
         .footer-logo {
             display: flex;
             align-items: center;
+            margin-bottom: 20px;
         }
         
         .footer-logo-img {
-            width: 45px;
-            height: 45px;
-            background-color: var(--primary);
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
             display: flex;
             justify-content: center;
             align-items: center;
-            border-radius: 5px;
-            margin-right: 10px;
+            border-radius: 8px;
+            margin-right: 12px;
+            box-shadow: 0 4px 12px rgba(26, 62, 114, 0.3);
         }
         
         .footer-logo-text {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 1.3rem;
         }
         
         .footer-logo-text span:first-child {
             color: white;
-            background-color: var(--primary);
-            padding: 2px 5px;
-            border-radius: 3px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-right: 2px;
         }
         
         .footer-logo-text span:last-child {
-            color: var(--primary);
+            color: var(--accent);
+            font-weight: 600;
         }
         
         .footer-contact p {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 12px;
+            font-size: 1.1rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .footer-links h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 1.1rem;
+        }
+        
+        .footer-links a:hover {
+            color: white;
         }
         
         .copyright {
             text-align: center;
-            padding-top: 30px;
+            padding-top: 40px;
             border-top: 1px solid rgba(255,255,255,0.1);
-            color: #aaa;
-            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+            font-size: 0.95rem;
         }
         
         /* Animations */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
             to { opacity: 1; transform: translateY(0); }
         }
         
@@ -625,8 +789,15 @@
         }
         
         /* Responsive */
+        @media (max-width: 1100px) {
+            .process-steps {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+        }
+        
         @media (max-width: 992px) {
-            .benefits-grid, .process-steps {
+            .benefits-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
             
@@ -637,6 +808,11 @@
             .hero h1 {
                 font-size: 2.5rem;
             }
+            
+            .footer-content {
+                flex-wrap: wrap;
+                gap: 40px;
+            }
         }
         
         @media (max-width: 768px) {
@@ -646,15 +822,17 @@
             
             .nav-links {
                 position: fixed;
-                top: 80px;
+                top: 0;
                 left: -100%;
-                width: 100%;
-                height: calc(100vh - 80px);
-                background-color: var(--light);
+                width: 80%;
+                height: 100vh;
+                background-color: white;
                 flex-direction: column;
-                align-items: center;
-                padding-top: 40px;
+                align-items: flex-start;
+                padding: 100px 40px 40px;
                 transition: left 0.3s ease;
+                box-shadow: 5px 0 30px rgba(0,0,0,0.1);
+                z-index: 1000;
             }
             
             .nav-links.active {
@@ -663,6 +841,11 @@
             
             .nav-links li {
                 margin: 15px 0;
+            }
+            
+            .hero {
+                height: auto;
+                padding: 100px 0;
             }
             
             .hero h1 {
@@ -679,7 +862,8 @@
             }
             
             .btn {
-                width: 80%;
+                width: 100%;
+                max-width: 300px;
                 margin-bottom: 15px;
             }
             
@@ -688,7 +872,7 @@
             }
             
             .form-container {
-                padding: 30px;
+                padding: 40px;
             }
         }
         
@@ -702,13 +886,15 @@
             }
             
             .section-title {
-                font-size: 1.7rem;
+                font-size: 1.8rem;
             }
             
             .footer-content {
                 flex-direction: column;
-                text-align: center;
-                gap: 20px;
+            }
+            
+            .footer-links {
+                margin-top: 30px;
             }
         }
     </style>
@@ -744,11 +930,11 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>SparkleStone Properties: Buying Homes Nationwide</h1>
-                <p>We purchase properties in any condition, offering cash solutions for your unique situation.</p>
+                <h1>Your Trusted Nationwide Cash Home Buyers</h1>
+                <p>We purchase properties in any condition, providing fast, fair cash offers and hassle-free closings across all 50 states.</p>
                 <div class="hero-buttons">
-                    <a href="#sell" class="btn btn-primary">Sell Your Property</a>
-                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                    <a href="#sell" class="btn btn-primary">Get a Cash Offer</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Our Team</a>
                 </div>
             </div>
         </div>
@@ -757,28 +943,28 @@
     <!-- Benefits Section -->
     <section class="benefits">
         <div class="container">
-            <h2 class="section-title">Why Choose SparkleStone Properties</h2>
+            <h2 class="section-title">Why Homeowners Choose Us</h2>
             <div class="benefits-grid">
                 <div class="benefit-card">
                     <div class="benefit-icon">
-                        <i class="fas fa-clock"></i>
+                        <i class="fas fa-bolt"></i>
                     </div>
-                    <h3>Fast Closings</h3>
-                    <p>In as little as 7 days with our streamlined process</p>
+                    <h3>Lightning-Fast Closings</h3>
+                    <p>Close in as little as 7 days with our streamlined cash purchase process, no waiting for bank approvals.</p>
                 </div>
                 <div class="benefit-card">
                     <div class="benefit-icon">
-                        <i class="fas fa-dollar-sign"></i>
+                        <i class="fas fa-hand-holding-usd"></i>
                     </div>
-                    <h3>Cash Offers</h3>
-                    <p>No financing hassles or bank approvals needed</p>
+                    <h3>Fair Cash Offers</h3>
+                    <p>Get competitive offers based on current market values, with no hidden fees or last-minute reductions.</p>
                 </div>
                 <div class="benefit-card">
                     <div class="benefit-icon">
-                        <i class="fas fa-check"></i>
+                        <i class="fas fa-file-signature"></i>
                     </div>
-                    <h3>No Fees</h3>
-                    <p>No commissions, no hidden costs, no repairs required</p>
+                    <h3>No Obligation</h3>
+                    <p>Our offers come with zero pressure - you choose whether to accept with no strings attached.</p>
                 </div>
             </div>
         </div>
@@ -787,33 +973,15 @@
     <!-- Situations Section -->
     <section class="situations">
         <div class="container">
-            <h2 class="section-title">We Buy in Any Situation</h2>
+            <h2 class="section-title">We Specialize in Difficult Situations</h2>
             <div class="situations-list">
                 <div class="situation-item">
                     <div class="situation-bullet">
-                        <i class="fas fa-home"></i>
+                        <i class="fas fa-people-arrows"></i>
                     </div>
                     <div>
-                        <h4>Inherited House</h4>
-                        <p>We handle the entire process so you don't have to deal with the burden</p>
-                    </div>
-                </div>
-                <div class="situation-item">
-                    <div class="situation-bullet">
-                        <i class="fas fa-heart-broken"></i>
-                    </div>
-                    <div>
-                        <h4>Divorce</h4>
-                        <p>Sell quickly to move forward with your life and split assets fairly</p>
-                    </div>
-                </div>
-                <div class="situation-item">
-                    <div class="situation-bullet">
-                        <i class="fas fa-file-invoice-dollar"></i>
-                    </div>
-                    <div>
-                        <h4>Too Much Taxes Owed</h4>
-                        <p>Avoid tax liens and penalties by selling quickly</p>
+                        <h4>Divorce Settlements</h4>
+                        <p>Quickly liquidate shared property to divide assets fairly and move forward</p>
                     </div>
                 </div>
                 <div class="situation-item">
@@ -821,17 +989,8 @@
                         <i class="fas fa-gavel"></i>
                     </div>
                     <div>
-                        <h4>Foreclosure</h4>
-                        <p>Stop foreclosure proceedings now and walk away with cash</p>
-                    </div>
-                </div>
-                <div class="situation-item">
-                    <div class="situation-bullet">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <div>
-                        <h4>Job Loss</h4>
-                        <p>Get cash when you need it most to cover expenses</p>
+                        <h4>Foreclosure Avoidance</h4>
+                        <p>Sell before foreclosure damages your credit and financial future</p>
                     </div>
                 </div>
                 <div class="situation-item">
@@ -839,44 +998,17 @@
                         <i class="fas fa-truck-moving"></i>
                     </div>
                     <div>
-                        <h4>Relocation</h4>
-                        <p>Sell fast when moving out of state without the hassle</p>
+                        <h4>Relocation Urgency</h4>
+                        <p>Need to sell fast for a job transfer or family situation? We can help</p>
                     </div>
                 </div>
                 <div class="situation-item">
                     <div class="situation-bullet">
-                        <i class="fas fa-piggy-bank"></i>
+                        <i class="fas fa-file-invoice-dollar"></i>
                     </div>
                     <div>
-                        <h4>Financial Hardship</h4>
-                        <p>We understand tough situations and offer compassionate solutions</p>
-                    </div>
-                </div>
-                <div class="situation-item">
-                    <div class="situation-bullet">
-                        <i class="fas fa-door-open"></i>
-                    </div>
-                    <div>
-                        <h4>Vacant Property</h4>
-                        <p>Stop paying for empty property that's draining your resources</p>
-                    </div>
-                </div>
-                <div class="situation-item">
-                    <div class="situation-bullet">
-                        <i class="fas fa-users-slash"></i>
-                    </div>
-                    <div>
-                        <h4>Bad Tenants</h4>
-                        <p>We'll take problematic rentals off your hands quickly</p>
-                    </div>
-                </div>
-                <div class="situation-item">
-                    <div class="situation-bullet">
-                        <i class="fas fa-file-contract"></i>
-                    </div>
-                    <div>
-                        <h4>Probate Issues</h4>
-                        <p>Simplify complex inheritance situations with our expertise</p>
+                        <h4>Tax or Debt Problems</h4>
+                        <p>Liquidate property to resolve financial obligations quickly</p>
                     </div>
                 </div>
                 <div class="situation-item">
@@ -884,17 +1016,17 @@
                         <i class="fas fa-hammer"></i>
                     </div>
                     <div>
-                        <h4>Property Damage</h4>
-                        <p>We buy homes in any condition - no matter how bad</p>
+                        <h4>Severe Property Damage</h4>
+                        <p>Fire, flood, or neglect - we buy homes in any condition</p>
                     </div>
                 </div>
                 <div class="situation-item">
                     <div class="situation-bullet">
-                        <i class="fas fa-calendar-times"></i>
+                        <i class="fas fa-users-slash"></i>
                     </div>
                     <div>
-                        <h4>Expired Listing</h4>
-                        <p>Tired of waiting for a buyer? We'll make you an offer today</p>
+                        <h4>Problem Tenants</h4>
+                        <p>Stop the headache of difficult renters and sell your rental property fast</p>
                     </div>
                 </div>
             </div>
@@ -904,8 +1036,8 @@
     <!-- CTA Banner -->
     <section class="cta-banner">
         <div class="container">
-            <h2>Ready to Sell? Contact Me Today!</h2>
-            <a href="#contact" class="btn btn-secondary">Get Started</a>
+            <h2>Ready for a No-Obligation Cash Offer?</h2>
+            <a href="#sell" class="btn btn-secondary">Start Your Free Property Evaluation</a>
         </div>
     </section>
 
@@ -913,35 +1045,60 @@
     <section id="about" class="about-section">
         <div class="container">
             <div class="about-content">
-                <h2 class="section-title">About SparkleStone Properties</h2>
-                <p>At SparkleStone Properties, we are direct buyers committed to helping homeowners sell their properties quickly and easily. With a nationwide reach, we offer cash purchases tailored to your needs, ensuring a stress-free experience. Our goal is to provide fair offers and close deals on your timeline, whether you're facing a tough situation or simply ready to move on.</p>
-                <p>We handle all the details, from paperwork to closing, so you can focus on what matters most. Unlike traditional real estate transactions, there are no commissions, no showings, and no waiting for buyer financing to come through. Our process is designed to be simple, transparent, and efficient.</p>
+                <h2 class="section-title">Our Proven Process</h2>
+                <p>SparkleStone Properties has helped thousands of homeowners nationwide sell their properties quickly and easily. Unlike traditional real estate transactions that can take months with no guarantee of closing, our cash purchase process is designed for speed, certainty, and convenience.</p>
+                <p>We understand that selling a home is often more than just a financial transaction - it's a major life event. Whether you're facing difficult circumstances or simply want to avoid the hassles of listing your property, we're here to provide a fair solution tailored to your timeline.</p>
                 
                 <div class="process-steps">
                     <div class="step">
                         <div class="step-number">1</div>
-                        <h3>Submit Details</h3>
-                        <p>Share your property information through our simple form</p>
+                        <h3>Property Details</h3>
+                        <p>Share basic information about your property through our simple form or by phone</p>
                     </div>
                     <div class="step">
                         <div class="step-number">2</div>
-                        <h3>Get Offer</h3>
-                        <p>Receive a fair, no-obligation cash offer within 24 hours</p>
+                        <h3>Fast Evaluation</h3>
+                        <p>We analyze your property and provide a fair cash offer within 24 hours</p>
                     </div>
                     <div class="step">
                         <div class="step-number">3</div>
-                        <h3>Choose Date</h3>
-                        <p>Select your preferred closing date (as fast as 7 days)</p>
+                        <h3>Accept Offer</h3>
+                        <p>Review our no-obligation offer with no pressure to proceed</p>
                     </div>
                     <div class="step">
                         <div class="step-number">4</div>
-                        <h3>Get Paid</h3>
-                        <p>Complete the sale and receive cash at closing</p>
+                        <h3>Close & Get Paid</h3>
+                        <p>Choose your closing date (as soon as 7 days) and receive cash at closing</p>
                     </div>
                 </div>
                 
                 <div class="personal-touch">
-                    <p>"With years of experience in real estate investing, I prioritize fairness, transparency, and speed to make selling your home as smooth and stress-free as possible. I understand every situation is unique, and I'm committed to finding solutions that work for you."</p>
+                    <p>"With over a decade of experience helping homeowners in difficult situations, we've perfected a process that prioritizes your needs. Whether you're facing foreclosure, dealing with probate, or simply need to sell quickly, we offer compassionate solutions with transparency and fairness at every step."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <h2 class="section-title">Meet Our Team</h2>
+            <div class="team-members">
+                <div class="team-member">
+                    <h3>Dre</h3>
+                    <p>Operations</p>
+                </div>
+                <div class="team-member">
+                    <h3>Grant</h3>
+                    <p>Acquisitions</p>
+                </div>
+                <div class="team-member">
+                    <h3>Joey</h3>
+                    <p>Property Specialist</p>
+                </div>
+                <div class="team-member">
+                    <h3>Chris</h3>
+                    <p>Finance</p>
                 </div>
             </div>
         </div>
@@ -950,24 +1107,32 @@
     <!-- Properties Page -->
     <section id="properties" class="properties-section">
         <div class="container">
-            <h2 class="section-title">Properties We Buy</h2>
-            <p class="text-center" style="max-width: 700px; margin: 0 auto 30px;">We're always looking for new opportunities across the United States. Submit any property for consideration and receive a fair cash offer.</p>
+            <h2 class="section-title">Properties We Purchase</h2>
+            <p class="text-center" style="max-width: 700px; margin: 0 auto 30px;">From move-in ready homes to complete renovations, we buy all types of residential properties nationwide.</p>
             
             <div class="properties-grid">
                 <div class="property-card">
                     <div class="property-img" style="background-image: url('https://images.unsplash.com/photo-1472224371017-08207f84aaae?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
                     <div class="property-content">
                         <h3>Single-Family Homes</h3>
-                        <p>From move-in ready to complete fixer-uppers, we buy single-family homes in any condition across all 50 states.</p>
-                        <a href="#contact" class="btn btn-secondary" style="margin-top: 15px;">Contact Me</a>
+                        <p>We purchase houses of all sizes and conditions, from starter homes to larger properties, in every market nationwide.</p>
+                        <a href="#contact" class="btn btn-secondary" style="margin-top: 15px;">Contact Us About Your Home</a>
                     </div>
                 </div>
                 <div class="property-card">
-                    <div class="property-img" style="background-image: url('https://images.unsplash.com/photo-1604929373481-e5cee89cf014?q=80&w=2352&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
+                    <div class="property-img" style="background-image: url('https://www.newwestern.com/cache/images/shutterstock_1188162424-scaled-1-undefined.webp');"></div>
                     <div class="property-content">
-                        <h3>Multi-Family Units</h3>
-                        <p>Duplexes, triplexes, quads, and larger apartment buildings - we purchase all types of investment properties.</p>
-                        <a href="#contact" class="btn btn-secondary" style="margin-top: 15px;">Contact Me</a>
+                        <h3>Multi-Unit Buildings</h3>
+                        <p>Duplexes, triplexes, apartment complexes - we acquire all types of investment properties with tenants or vacant.</p>
+                        <a href="#contact" class="btn btn-secondary" style="margin-top: 15px;">Discuss Your Multi-Family Property</a>
+                    </div>
+                </div>
+                <div class="property-card">
+                    <div class="property-img" style="background-image: url('https://images.unsplash.com/photo-1743798918437-b2fbfcf2e7a1?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
+                    <div class="property-content">
+                        <h3>Fixer-Uppers</h3>
+                        <p>No property is too damaged or outdated. We buy homes needing repairs, renovations, or complete rebuilds.</p>
+                        <a href="#contact" class="btn btn-secondary" style="margin-top: 15px;">Get an Offer on Your Fixer-Upper</a>
                     </div>
                 </div>
                 <div class="property-card">
@@ -975,23 +1140,7 @@
                     <div class="property-content">
                         <h3>Townhomes & Condos</h3>
                         <p>We purchase townhomes and condominiums, including those with special assessments or HOA issues.</p>
-                        <a href="#contact" class="btn btn-secondary" style="margin-top: 15px;">Contact Me</a>
-                    </div>
-                </div>
-                <div class="property-card">
-                    <div class="property-img" style="background-image: url('https://images.unsplash.com/photo-1698254064327-b3dfd78cc71c?q=80&w=2675&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
-                    <div class="property-content">
-                        <h3>Fixer-Uppers</h3>
-                        <p>No repairs needed - we buy homes in any condition, including those needing complete renovation.</p>
-                        <a href="#contact" class="btn btn-secondary" style="margin-top: 15px;">Contact Me</a>
-                    </div>
-                </div>
-                <div class="property-card">
-                    <div class="property-img" style="background-image: url('https://images.unsplash.com/photo-1681853108586-f29b4ef5c0fb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
-                    <div class="property-content">
-                        <h3>Vacant Land</h3>
-                        <p>We purchase vacant residential and commercial lots, raw land, and acreage nationwide.</p>
-                        <a href="#contact" class="btn btn-secondary" style="margin-top: 15px;">Contact Me</a>
+                        <a href="#contact" class="btn btn-secondary" style="margin-top: 15px;">Contact Us About Your Townhome/Condo</a>
                     </div>
                 </div>
                 <div class="property-card">
@@ -999,7 +1148,7 @@
                     <div class="property-content">
                         <h3>Mobile Homes</h3>
                         <p>We buy mobile homes on owned land or in parks, including those needing repairs.</p>
-                        <a href="#contact" class="btn btn-secondary" style="margin-top: 15px;">Contact Me</a>
+                        <a href="#contact" class="btn btn-secondary" style="margin-top: 15px;">Get an Offer on Your Mobile Home</a>
                     </div>
                 </div>
             </div>
@@ -1009,7 +1158,7 @@
     <!-- Sell Your Property Page -->
     <section id="sell" class="sell-section">
         <div class="container">
-            <h2 class="section-title">Sell Your Property to a Direct Buyer</h2>
+            <h2 class="section-title">Get Your Fair Cash Offer</h2>
             
             <div class="form-container">
                 <form id="property-form" action="https://formsubmit.co/sparklestoneproperties@gmail.com" method="POST">
@@ -1019,6 +1168,7 @@
                     <input type="hidden" name="_next" value="#thank-you">
                     <input type="hidden" name="_autoresponse" value="Thank you for contacting SparkleStone Properties! We've received your property details and will review your submission within 24 hours. If you need immediate assistance, please call us at 850-325-0784.">
                     <input type="hidden" name="_cc" value="sparklestoneproperties@gmail.com">
+                    <input type="hidden" name="_replyto" value="sparklestoneproperties@gmail.com">
                     
                     <!-- Form Fields -->
                     <div class="form-group">
@@ -1041,45 +1191,58 @@
                         <label for="condition">Property Condition *</label>
                         <select id="condition" name="Property Condition" class="form-control" required>
                             <option value="">Select Condition</option>
-                            <option value="Excellent">Excellent</option>
-                            <option value="Good">Good</option>
-                            <option value="Fair">Fair</option>
-                            <option value="Poor">Poor</option>
+                            <option value="Excellent">Excellent (Move-in Ready)</option>
+                            <option value="Good">Good (Minor Repairs Needed)</option>
+                            <option value="Fair">Fair (Significant Repairs Needed)</option>
+                            <option value="Poor">Poor (Major Renovation Required)</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="situation">Your Situation *</label>
                         <select id="situation" name="Your Situation" class="form-control" required>
                             <option value="">Select Your Situation</option>
-                            <option value="Inherited House">Inherited House</option>
-                            <option value="Divorce">Divorce</option>
-                            <option value="Too Much Taxes Owed">Too Much Taxes Owed</option>
-                            <option value="Foreclosure">Foreclosure</option>
-                            <option value="Job Loss">Job Loss</option>
-                            <option value="Relocation">Relocation</option>
-                            <option value="Financial Hardship">Financial Hardship</option>
+                            <option value="Inherited House">Inherited Property</option>
+                            <option value="Divorce">Divorce Settlement</option>
+                            <option value="Foreclosure">Facing Foreclosure</option>
+                            <option value="Relocation">Relocating Urgently</option>
+                            <option value="Financial Hardship">Financial Difficulties</option>
                             <option value="Vacant Property">Vacant Property</option>
-                            <option value="Bad Tenants">Bad Tenants</option>
-                            <option value="Probate Issues">Probate Issues</option>
-                            <option value="Property Damage">Property Damage</option>
-                            <option value="Expired Listing">Expired Listing</option>
+                            <option value="Bad Tenants">Problem Tenants</option>
+                            <option value="Probate Issues">Probate Situation</option>
+                            <option value="Property Damage">Damaged Property</option>
                             <option value="Other">Other</option>
                         </select>
                     </div>
-                    <button type="submit" class="submit-btn">Submit Property Details</button>
+                    <div class="form-group">
+                        <label for="notes">Additional Notes</label>
+                        <textarea id="notes" name="Additional Notes" class="form-control" placeholder="Tell us more about your property and situation"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Get My Cash Offer</button>
                 </form>
                 
                 <!-- Success Message -->
                 <div id="thank-you" class="form-success">
                     <h3><i class="fas fa-check-circle"></i> Thank You!</h3>
-                    <p>We've received your information and will contact you shortly.</p>
-                    <p>You should receive a confirmation email shortly. If you don't see it, please check your spam folder.</p>
+                    <p>We've received your property details and will contact you within 24 hours with a fair cash offer.</p>
+                    <p><strong>Next Steps:</strong></p>
+                    <ol style="text-align: left; margin-top: 15px; padding-left: 20px;">
+                        <li>Check your email for our confirmation (including spam folder)</li>
+                        <li>Our team will review your property details</li>
+                        <li>We'll contact you with a no-obligation cash offer</li>
+                    </ol>
+                    <p style="margin-top: 20px;">For immediate assistance, call us at <a href="tel:850-325-0784" style="color: white; text-decoration: underline;">850-325-0784</a></p>
+                </div>
+
+                <!-- Error Message -->
+                <div id="property-error" class="form-error">
+                    <h3><i class="fas fa-exclamation-triangle"></i> Submission Error</h3>
+                    <p>We encountered an issue processing your request. Please try again or call us directly at <a href="tel:850-325-0784" style="color: white; text-decoration: underline;">850-325-0784</a> for immediate assistance.</p>
                 </div>
             </div>
             
             <div class="reassurance-text" style="margin-top: 40px; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">
-                <p>At SparkleStone Properties, we buy homes in any condition or situation nationwide. Whether you're dealing with an inherited house, facing foreclosure, or struggling with bad tenants, we offer cash solutions tailored to your timeline. No repairs, no fees, no hassle—just a fair offer and a quick close. Our process is designed to relieve your stress and provide certainty, no matter the circumstance.</p>
-                <p style="margin-top: 20px; font-weight: 600;">Submit your information above or call us directly at <a href="tel:850-325-0784" style="color: var(--primary); text-decoration: none;">850-325-0784</a> for a no-obligation consultation.</p>
+                <p><strong>Our Promise:</strong> At SparkleStone Properties, we provide fair cash offers with no obligation and no pressure. Whether you're facing foreclosure, dealing with probate, or simply need to sell quickly, we offer compassionate solutions tailored to your unique situation.</p>
+                <p style="margin-top: 20px; font-weight: 600;">Prefer to speak with someone now? Call our team at <a href="tel:850-325-0784" style="color: var(--primary); text-decoration: none;">850-325-0784</a> for a confidential consultation.</p>
             </div>
         </div>
     </section>
@@ -1087,7 +1250,7 @@
     <!-- Contact Page -->
     <section id="contact" class="contact-section">
         <div class="container">
-            <h2 class="section-title">Get in Touch with Us</h2>
+            <h2 class="section-title">Contact Our Team</h2>
             
             <div class="form-container">
                 <form id="contact-form" action="https://formsubmit.co/sparklestoneproperties@gmail.com" method="POST">
@@ -1096,6 +1259,7 @@
                     <input type="hidden" name="_template" value="table">
                     <input type="hidden" name="_next" value="#contact-thank-you">
                     <input type="hidden" name="_autoresponse" value="Thank you for contacting SparkleStone Properties! We've received your message and will respond within 24 hours. For immediate assistance, please call us at 850-325-0784.">
+                    <input type="hidden" name="_replyto" value="sparklestoneproperties@gmail.com">
                     
                     <!-- Form Fields -->
                     <div class="form-group">
@@ -1119,21 +1283,35 @@
                 
                 <!-- Success Message -->
                 <div id="contact-thank-you" class="form-success">
-                    <h3><i class="fas fa-check-circle"></i> Message Sent!</h3>
-                    <p>Thank you for contacting us. We'll get back to you shortly.</p>
-                    <p>You should receive a confirmation email soon. If you don't see it, please check your spam folder.</p>
+                    <h3><i class="fas fa-check-circle"></i> Message Received!</h3>
+                    <p>Thank you for contacting SparkleStone Properties. We'll respond to your inquiry within 24 hours.</p>
+                    <p><strong>What to Expect:</strong></p>
+                    <ul style="text-align: left; margin-top: 15px; padding-left: 20px;">
+                        <li>A confirmation email with your message details</li>
+                        <li>Personalized response from our team</li>
+                        <li>No spam or aggressive sales tactics</li>
+                    </ul>
+                    <p style="margin-top: 20px;">Need immediate assistance? Call us now at <a href="tel:850-325-0784" style="color: white; text-decoration: underline;">850-325-0784</a></p>
+                </div>
+
+                <!-- Error Message -->
+                <div id="contact-error" class="form-error">
+                    <h3><i class="fas fa-exclamation-triangle"></i> Submission Error</h3>
+                    <p>We couldn't send your message. Please try again or call us directly at <a href="tel:850-325-0784" style="color: white; text-decoration: underline;">850-325-0784</a>.</p>
                 </div>
             </div>
             
             <div class="contact-info">
-                <h3>Contact Information</h3>
-                <p><i class="fas fa-phone"></i> Phone: 850-325-0784</p>
-                <p><i class="fas fa-envelope"></i> Email: sparklestoneproperties@gmail.com</p>
-                <p><i class="fas fa-map-marker-alt"></i> Serving All 50 States Nationwide</p>
+                <h3>Direct Contact Options</h3>
+                <p><i class="fas fa-phone"></i> Phone: <a href="tel:850-325-0784" style="color: white; text-decoration: none;">850-325-0784</a></p>
+                <p><i class="fas fa-envelope"></i> Email: <a href="mailto:sparklestoneproperties@gmail.com" style="color: white; text-decoration: none;">sparklestoneproperties@gmail.com</a></p>
+                <p><i class="fas fa-clock"></i> Hours: Monday-Friday 8am-7pm EST</p>
+                <p><i class="fas fa-map-marker-alt"></i> Serving: All 50 States Nationwide</p>
             </div>
             
             <div class="map-placeholder">
-                <h3>Serving the Entire United States</h3>
+                <h3>Nationwide Property Solutions</h3>
+                <p>Wherever your property is located, we can make you a fair cash offer</p>
             </div>
         </div>
     </section>
@@ -1142,32 +1320,44 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">
-                    <div class="footer-logo-img">
-                        <i class="fas fa-home"></i>
+                <div>
+                    <div class="footer-logo">
+                        <div class="footer-logo-img">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <div class="footer-logo-text">
+                            <span>SparkleStone</span><span>Properties</span>
+                        </div>
                     </div>
-                    <div class="footer-logo-text">
-                        <span>SparkleStone</span><span>Properties</span>
+                    <div class="footer-contact" style="margin-top: 20px;">
+                        <p><i class="fas fa-phone"></i> 850-325-0784</p>
+                        <p><i class="fas fa-envelope"></i> sparklestoneproperties@gmail.com</p>
                     </div>
-                </div>
-                <div class="footer-contact">
-                    <p><i class="fas fa-phone"></i> 850-325-0784</p>
-                    <p><i class="fas fa-envelope"></i> sparklestoneproperties@gmail.com</p>
-                    <p><i class="fas fa-clock"></i> Mon-Fri: 9am-6pm EST</p>
                 </div>
                 <div class="footer-links">
                     <h4>Quick Links</h4>
-                    <ul style="list-style: none;">
-                        <li><a href="#home" style="color: white; text-decoration: none;">Home</a></li>
-                        <li><a href="#about" style="color: white; text-decoration: none;">About Us</a></li>
-                        <li><a href="#properties" style="color: white; text-decoration: none;">Properties We Buy</a></li>
-                        <li><a href="#sell" style="color: white; text-decoration: none;">Sell Your Property</a></li>
-                        <li><a href="#contact" style="color: white; text-decoration: none;">Contact</a></li>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">Our Process</a></li>
+                        <li><a href="#properties">Properties We Buy</a></li>
+                        <li><a href="#sell">Get a Cash Offer</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#sell">Cash Home Buying</a></li>
+                        <li><a href="#sell">Foreclosure Help</a></li>
+                        <li><a href="#sell">Inheritance Solutions</a></li>
+                        <li><a href="#sell">Divorce Property Sales</a></li>
+                        <li><a href="#sell">Probate Assistance</a></li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
                 <p>&copy; <script>document.write(new Date().getFullYear())</script> SparkleStone Properties. All rights reserved.</p>
+                <p style="margin-top: 10px; font-size: 0.8rem;">Not affiliated with any government agency. By submitting your information, you agree to our <a href="#" style="color: rgba(255,255,255,0.6);">Privacy Policy</a> and consent to be contacted by phone, email or text.</p>
             </div>
         </div>
     </footer>
@@ -1192,55 +1382,65 @@
             });
         });
         
-        // Form Submission Handling
-        document.getElementById('property-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const form = e.target;
-            const successMessage = document.getElementById('thank-you');
+        // Form Submission Handling with Enhanced Feedback
+        function handleFormSubmit(formId, successId, errorId) {
+            const form = document.getElementById(formId);
+            const successMessage = document.getElementById(successId);
+            const errorMessage = document.getElementById(errorId);
             
-            fetch(form.action, {
-                method: 'POST',
-                body: new FormData(form)
-            })
-            .then(response => {
-                if (response.ok) {
-                    form.style.display = 'none';
-                    successMessage.style.display = 'block';
-                    successMessage.scrollIntoView({ behavior: 'smooth' });
-                    form.reset();
-                } else {
-                    throw new Error('Form submission failed');
-                }
-            })
-            .catch(error => {
-                alert('There was an error submitting your form. Please call us directly at 850-325-0784');
-                console.error('Form submission error:', error);
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Show loading state
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const originalBtnText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+                submitBtn.disabled = true;
+                
+                // Hide any previous messages
+                successMessage.style.display = 'none';
+                errorMessage.style.display = 'none';
+                
+                // Submit to FormSubmit
+                fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        // Success - show confirmation
+                        form.style.display = 'none';
+                        successMessage.style.display = 'block';
+                        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        form.reset();
+                    } else {
+                        throw new Error('Form submission failed');
+                    }
+                })
+                .catch(error => {
+                    console.error('Form submission error:', error);
+                    // Show error message
+                    errorMessage.style.display = 'block';
+                    errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                })
+                .finally(() => {
+                    // Reset button state
+                    submitBtn.innerHTML = originalBtnText;
+                    submitBtn.disabled = false;
+                });
             });
-        });
+        }
         
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const form = e.target;
-            const successMessage = document.getElementById('contact-thank-you');
+        // Initialize form handlers
+        document.addEventListener('DOMContentLoaded', function() {
+            handleFormSubmit('property-form', 'thank-you', 'property-error');
+            handleFormSubmit('contact-form', 'contact-thank-you', 'contact-error');
             
-            fetch(form.action, {
-                method: 'POST',
-                body: new FormData(form)
-            })
-            .then(response => {
-                if (response.ok) {
-                    form.style.display = 'none';
-                    successMessage.style.display = 'block';
-                    successMessage.scrollIntoView({ behavior: 'smooth' });
-                    form.reset();
-                } else {
-                    throw new Error('Form submission failed');
-                }
-            })
-            .catch(error => {
-                alert('There was an error submitting your message. Please call us directly at 850-325-0784');
-                console.error('Form submission error:', error);
-            });
+            // Set current year in footer
+            document.getElementById('year').textContent = new Date().getFullYear();
         });
         
         // Smooth scrolling for anchor links
@@ -1253,6 +1453,12 @@
                 
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
+                    // Close mobile menu if open
+                    navLinks.classList.remove('active');
+                    hamburger.classList.remove('fa-times');
+                    hamburger.classList.add('fa-bars');
+                    
+                    // Scroll to target
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
@@ -1261,10 +1467,31 @@
             });
         });
         
-        // Current year for copyright
-        document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('year').textContent = new Date().getFullYear();
+        // Add animation to elements when they come into view
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.benefit-card, .situation-item, .property-card, .step');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Set initial state for animated elements
+        document.querySelectorAll('.benefit-card, .situation-item, .property-card, .step').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'all 0.6s ease-out';
         });
+        
+        // Run on load and scroll
+        window.addEventListener('load', animateOnScroll);
+        window.addEventListener('scroll', animateOnScroll);
     </script>
 </body>
 </html>
